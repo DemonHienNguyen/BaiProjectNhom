@@ -24,30 +24,42 @@ body {
     font-size: 14px;
 }
 
-.dropdown {
+.account button {
+    background-color: #4a43d1;
+}
+
+.menu {
     position: absolute;
     right: 0px;
-    top: 30px;
+    top: 40px;
     background-color: white;
     width: 160px;
     border-radius: 8px;
-    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
 }
 
-.dropdown a {
+.menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.menu a {
     display: block;
     padding: 12px;
     text-decoration: none;
-    color: #333;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.dropdown a:hover {
-    background: #f3f4f6;
+.menu a:hover {
+    background-color: #6e66fd;
+    color: white;
 }
 
-.account:hover .dropdown {
-    display: block;
-}
 
 .banner {
     width: 768px;
