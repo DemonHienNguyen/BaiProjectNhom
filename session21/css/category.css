@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.error-category{
+    color: red;
+    margin-left: 100px;
+    display: none;
+}
+ol{
+    margin-left: 50px;
+}
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+}
+.edit{
+    background-color: blue;
+}
+.delete{
+    background-color: red;
+}
