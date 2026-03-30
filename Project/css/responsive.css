@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+    .topbar {
+        justify-content: space-between;
+    }
+}
