@@ -28,13 +28,13 @@
                     Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng,
                     thanh toán và quản lý sản phẩm.
                 </p>
-                <button>+ Thêm nhiệm vụ</button>
+                <button onclick="showAddTaskModal()">+ Thêm nhiệm vụ</button>
             </div>
 
             <div>
                 <div class="add-members">
                     <p>Thành viên</p>
-                    <button>+ Thêm thành viên</button>
+                    <button onclick="showAddMemberModal()">+ Thêm thành viên</button>
                 </div>
 
                 <div class="members">
@@ -163,7 +163,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Thêm/sửa nhiệm vụ</h3>
-                <span class="close">&times;</span>
+                <span class="close" onclick="cancelModal()">&times;</span>
             </div>
 
             <div class="modal-body">
@@ -205,7 +205,7 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn-cancel">Hủy</button>
+                <button class="btn-cancel" onclick="cancelModal()">Hủy</button>
                 <button class="btn-primary">Lưu</button>
             </div>
         </div>
@@ -215,7 +215,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="modalTitle">Thêm thành viên</h3>
-                <span class="close">&times;</span>
+                <span class="close" onclick="cancelModal()">&times;</span>
             </div>
 
             <div class="modal-body">
@@ -228,7 +228,7 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn-cancel">Hủy</button>
+                <button class="btn-cancel" onclick="cancelModal()">Hủy</button>
                 <button class="btn-primary">Lưu</button>
             </div>
         </div>
@@ -238,6 +238,7 @@
         © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
     </footer>
 
+    <script src="../js/project-details.js"></script>
 </body>
 
 </html>

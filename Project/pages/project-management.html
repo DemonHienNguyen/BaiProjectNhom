@@ -24,7 +24,7 @@
             <h3>Quản Lý Dự Án Nhóm</h3>
 
             <div class="top-bar">
-                <button class="btn btn-primary">+ Thêm Dự Án</button>
+                <button class="btn btn-primary" id="addProjectBtn" onclick="showAddModal()">+ Thêm Dự Án</button>
                 <input type="text" placeholder="Tìm kiếm dự án">
             </div>
 
@@ -44,7 +44,7 @@
                         <td>Xây dựng website thương mại điện tử</td>
                         <td>
                             <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
                     </tr>
@@ -53,7 +53,70 @@
                         <td>Phát triển ứng dụng di động</td>
                         <td>
                             <button class="btn btn-edit">Sửa</button>
-                            <button class="btn btn-delete">Xóa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Quản lý dữ liệu khách hàng</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Xây dựng website thương mại điện tử</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Phát triển ứng dụng di động</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Quản lý dữ liệu khách hàng</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Xây dựng website thương mại điện tử</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Phát triển ứng dụng di động</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Quản lý dữ liệu khách hàng</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
                     </tr>
@@ -76,7 +139,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 id="modalTitle">Thêm/sửa dự án</h3>
-                    <span class="close">&times;</span>
+                    <span class="close" onclick="cancelModal()">&times;</span>
                 </div>
 
                 <div class="modal-body">
@@ -89,7 +152,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-cancel">Hủy</button>
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
                     <button class="btn btn-primary">Lưu</button>
                 </div>
             </div>
@@ -99,7 +162,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 id="modalTitle">Xóa dự án</h3>
-                    <span class="close">&times;</span>
+                    <span class="close" onclick="cancelModal()">&times;</span>
                 </div>
 
                 <div class="modal-body">
@@ -107,7 +170,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button class="btn btn-cancel">Hủy</button>
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
                     <button class="btn btn-delete">Xóa</button>
                 </div>
             </div>
@@ -118,6 +181,7 @@
         © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
     </footer>
 
+    <script src="../js/project-management.js"></script>
 </body>
 
 </html>
