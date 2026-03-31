@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Dự Án - Team Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/project-detail.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h3>Quản Lý Dự Án</h3>
+            <nav>
+                <a href="#">Dự Án</a>
+                <a href="#">Nhiệm Vụ của tôi</a>
+                <a href="#">Đăng Xuất</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-card">
+            <div class="project-header-info">
+                <div class="project-title-desc">
+                    <h2>Xây dựng website thương mại điện tử</h2>
+                    <p>Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng, thanh toán và quản lý sản phẩm.</p>
+                </div>
+                
+                <div class="project-members-section">
+                    <div class="members-top">
+                        <h4>Thành viên</h4>
+                        <button class="btn-outline">+ Thêm thành viên</button>
+                    </div>
+                    <div class="members-list">
+                        <div class="member-item">
+                            <div class="avatar bg-blue">AN</div>
+                            <div class="member-info-text">
+                                <strong>An Nguyễn</strong>
+                                <span>Project owner</span>
+                            </div>
+                        </div>
+                        <div class="member-item">
+                            <div class="avatar bg-purple">BN</div>
+                            <div class="member-info-text">
+                                <strong>Bách Nguyễn</strong>
+                                <span>Frontend developer</span>
+                            </div>
+                        </div>
+                        <div class="avatar bg-gray more-dots">...</div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="actions-toolbar">
+                <button class="btn-add-task">+ Thêm nhiệm vụ</button>
+                <div class="filters-search-group">
+                    <select class="select-filter">
+                        <option>Sắp xếp theo</option>
+                    </select>
+                    <input type="text" placeholder="Tìm kiếm nhiệm vụ">
+                </div>
+            </div>
+            
+
+            <div class="task-list-container">
+                <h3>Danh Sách Nhiệm Vụ</h3>
+                <table class="task-grid-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left col-task-name">Tên Nhiệm Vụ</th>
+                            <th class="col-assignee">Người Phụ Trách</th>
+                            <th class="col-priority">Ưu Tiên</th>
+                            <th class="col-start">Ngày Bắt Đầu</th>
+                            <th class="col-due">Hạn Chót</th>
+                            <th class="col-progress">Tiến độ</th>
+                            <th class="col-actions">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="group-header-row">
+                            <td colspan="7">▼ To do</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Soạn thảo đề cương dự án</td>
+                            <td>An Nguyễn</td>
+                            <td><span class="badge badge-priority-low">Thấp</span></td>
+                            <td>02 - 24</td>
+                            <td>02 - 27</td>
+                            <td><span class="badge badge-progress-ontrack">Đúng tiến độ</span></td>
+                            <td class="cell-actions">
+                                <button class="btn-icon-action btn-edit">Sửa</button>
+                                <button class="btn-icon-action btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Soạn thảo đề cương dự án</td>
+                            <td>An Nguyễn</td>
+                            <td><span class="badge badge-priority-medium">Trung bình</span></td>
+                            <td>02 - 24</td>
+                            <td>02 - 27</td>
+                            <td><span class="badge badge-progress-atrisk">Có rủi ro</span></td>
+                            <td class="cell-actions">
+                                <button class="btn-icon-action btn-edit">Sửa</button>
+                                <button class="btn-icon-action btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Soạn thảo đề cương dự án</td>
+                            <td>An Nguyễn</td>
+                            <td><span class="badge badge-priority-high">Cao</span></td>
+                            <td>02 - 24</td>
+                            <td>02 - 27</td>
+                            <td><span class="badge badge-progress-late">Trễ hạn</span></td>
+                            <td class="cell-actions">
+                                <button class="btn-icon-action btn-edit">Sửa</button>
+                                <button class="btn-icon-action btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+
+                        <tr class="group-header-row">
+                            <td colspan="7">▼ In Progress</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Lên lịch họp kickoff</td>
+                            <td>An Nguyễn</td>
+                            <td><span class="badge badge-priority-medium">Trung bình</span></td>
+                            <td>02 - 24</td>
+                            <td>02 - 27</td>
+                            <td><span class="badge badge-progress-atrisk">Có rủi ro</span></td>
+                            <td class="cell-actions">
+                                <button class="btn-icon-action btn-edit">Sửa</button>
+                                <button class="btn-icon-action btn-delete">Xóa</button>
+                            </td>
+                        </tr>
+
+                        <tr class="group-header-row collapsed">
+                            <td colspan="7">▶ Pending</td>
+                        </tr>
+                        <tr class="group-header-row collapsed">
+                            <td colspan="7">▶ Done</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Quản Lý Dự Án Nhóm. All rights reserved.</p>
+    </footer>
+</body>
+</html>

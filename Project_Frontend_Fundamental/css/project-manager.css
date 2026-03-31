@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #F8F9FA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background-color: #212529;
+    display: flex;
+    color: #FFFFFF;
+    justify-content: space-between;
+    padding: 0 10%;
+    height: 56px;
+    align-items: center;
+}
+
+.header h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.header nav a {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header nav a:hover {
+    color: white;
+}
+
+/* Main Container */
+.container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 25px auto;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding-bottom: 20px;
+}
+
+.main-card h2,
+.container h2 {
+    padding: 20px 25px;
+    font-size: 24px;
+    font-weight: 500;
+    border-bottom: none;
+}
+
+.section-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+}
+
+.btn-add {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    padding: 5px 24.7px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15.76px;
+}
+
+.section-1 input {
+    width: 433px;
+    padding: 10px 12px;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    outline: none;
+    font-size: 15.73px;
+    font-weight: 400;
+    color: #A9A9A9;
+}
+
+.table-content h3 {
+    padding: 10px 25px;
+    font-size: 19.77px;
+    font-weight: 500;
+    color: #212529;
+}
+
+/* Table Styling */
+table {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+    border-collapse: collapse;
+    
+    /* 1. VIỀN NGOÀI (Trái, Phải, Dưới): Dày vừa (ví dụ 3px) */
+    border-left: 2px solid #dee2e6;
+    border-right: 2px solid #dee2e6;
+    border-bottom: 2px solid #dee2e6;
+    /* Viền trên cùng thường đi theo header đen nên có thể để 1px hoặc 3px tùy ý */
+    border-top: 1px solid #dee2e6; 
+}
+
+table th {
+    background-color: #212529;
+    color: white;
+    padding: 9px;
+    font-size: 14px;
+    font-weight: 800;
+    
+    /* 2. ĐƯỜNG KẺ DỌC TRONG HEADER: Dày nhất (ví dụ 5px) */
+    /* Màu tối hơn một chút để tàng hình vào nền đen hoặc dùng màu sáng để lộ rõ */
+    border-right: 3px solid #373b3e; 
+    border-bottom: 1px solid #373b3e;
+}
+
+table td {
+    padding: 12px;
+    text-align: center;
+    color: #444;
+    
+    /* 3. ĐƯỜNG KẺ NGANG: Mỏng nhất (1px) */
+    border-bottom: 1px solid #dee2e6;
+    
+    /* 4. ĐƯỜNG KẺ DỌC TRONG THÂN BẢNG: Dày nhất (5px) */
+    border-right: 3px solid #dee2e6; 
+}
+
+/* Xóa đường kẻ dọc thừa ở cột cuối cùng để không bị chồng vào viền ngoài của table */
+table th:last-child, 
+table td:last-child {
+    border-right: none;
+}
+
+.text-left {
+    text-align: left;
+    padding-left: 15px;
+}
+/* Action Buttons */
+table button {
+    border: none;
+    border-radius: 4px;
+    margin: 0 2px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+}
+
+.btn-edit {
+    background-color: #FFC107;
+    color: #000;
+    font-size: 13.7px;
+    font-weight: 400;
+    padding: 9px 16px;
+}
+
+.btn-delete {
+    background-color: #DC3545;
+    font-size: 12.68px;
+    padding: 9px;
+
+}
+
+.btn-detail {
+    background-color: #0D6EFD;
+    font-size: 13.7px;
+    padding: 9px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.p-btn {
+    height: 38px;
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 1px solid #dee2e6;
+    color: #0D6EFD;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s;
+    /* Reset padding để không bị đẩy rộng ô */
+    padding: 0;
+    /* Nếu muốn các ô dính liền hoàn toàn, bỏ border-radius hoặc chỉ để ở 2 đầu */
+    border-radius: 0;
+}
+
+/* Bo góc cho nút đầu tiên và cuối cùng để giao diện tinh tế hơn */
+.p-btn:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.p-btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.p-btn+.p-btn {
+    border-left: none;
+}
+
+.p-btn.active {
+    background-color: #0D6EFD;
+    color: white;
+    border-color: #0D6EFD;
+}
+
+.p-btn:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+/* =========================================
+   MODAL POPUP STYLING
+   ========================================= */
+
+/* Lớp nền mờ bao phủ toàn màn hình */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Làm tối nền */
+    display: none; /* Ẩn mặc định, sẽ dùng JS để hiện */
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 1000;
+    padding-top: 30px;
+}
+
+/* Khối nội dung trắng ở giữa */
+.modal-content {
+    background: white;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header của Modal */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.modal-header h4 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6c757d;
+}
+
+/* Thân của Modal (Form nhập liệu) */
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* Sửa lại để mặc định input không bị đỏ */
+.form-group input {
+    border: 1px solid #dee2e6;
+}
+/* Thêm class này để dùng JS gọi khi có lỗi thật sự */
+.form-group input.is-invalid {
+    border-color: #dc3545;
+}
+
+.error-text {
+    color: #dc3545;
+    font-size: 11px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Footer của Modal (Các nút bấm) */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-save {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Class để hiển thị modal thông qua JS */
+.modal-open {
+    display: flex;
+}
+/* =========================================
+   THÊM MỚI: NÚT XÓA TRONG MODAL
+   ========================================= */
+.btn-delete-confirm {
+    background-color: #DC3545;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-delete-confirm:hover {
+    background-color: #c82333;
+}

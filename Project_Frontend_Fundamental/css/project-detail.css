@@ -1,0 +1,496 @@
+/* =========================================
+   GLOBAL STYLES (CÀI ĐẶT CHUNG)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #F8F9FA;
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   HEADER & FOOTER (KHUNG ĐEN)
+   ========================================= */
+header {
+    background-color: #212529;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.header-container h3 {
+    color: white;
+    font-weight: 400;
+    font-size: 19.74px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 15.78px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+footer {
+    background-color: #212529;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: auto;
+    font-size: 15px;
+}
+
+/* =========================================
+   MAIN CARD (THẺ TRẮNG CHỨA NỘI DUNG)
+   ========================================= */
+main {
+    padding: 0 40px;
+}
+
+.main-card {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+
+/* Phần thông tin dự án ở trên cùng */
+.project-header-info {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 30px 25px 25px; */
+    /* border-bottom: 1px solid #EAEAEA; */
+}
+
+.project-title-desc {
+    width: 50%;
+}
+
+.project-title-desc h2 {
+    font-size: 23.54px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.project-title-desc p {
+    font-size: 15.99px;
+    color: #212529;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+/* Phần thành viên bên phải */
+.project-members-section {
+    width: auto;
+}
+
+.members-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.members-top h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+.btn-outline {
+    border: 1px solid #DEE2E6;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #444;
+}
+
+.members-list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.member-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Các Avatar tròn */
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.member-info-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.member-info-text span {
+    color: #888;
+    font-size: 11px;
+}
+
+.more-dots {
+    color: #888;
+    border: 1px solid #DEE2E6;
+    cursor: pointer;
+}
+
+/* =========================================
+   TOOLBAR (NÚT THÊM, LỌC, TÌM KIẾM)
+   ========================================= */
+.actions-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px 20px;
+}
+
+.btn-add-task {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.filters-search-group {
+    display: flex;
+    gap: 10px;
+}
+
+.select-filter,
+.filters-search-group input {
+    padding: 8px 12px;
+    border: 1px solid #CED4DA;
+    border-radius: 5px;
+    outline: none;
+    color: #444;
+    font-size: 14px;
+}
+
+.filters-search-group input {
+    width: 300px;
+}
+
+/* =========================================
+   TASK TABLE (BẢNG NHIỆM VỤ) - SÁT HÌNH
+   ========================================= */
+.task-list-container {
+    max-width: 1296px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.task-list-container h3 {
+    padding: 0 25px 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+table.task-grid-table {
+    width: calc(100% - 50px);
+    margin: 0 25px;
+    border-collapse: collapse;
+    border: 1px solid #DEE2E6;
+}
+
+/* Header bảng (thead) - Nền trắng/xám, lưới mỏng */
+.task-grid-table th {
+    background-color: #F8FAFC;
+    color: #444;
+    padding: 12px 10px;
+    font-weight: 500;
+    font-size: 13px;
+    border-bottom: 1px solid #DEE2E6;
+    border-right: 1px solid #DEE2E6;
+}
+
+.task-grid-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #DEE2E6;
+    border-right: 1px solid #DEE2E6;
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+}
+
+/* Tiêu đề nhóm nhiệm vụ (To do, In Progress...) */
+tr.group-header-row td {
+    background-color: #F1F3F5;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+tr.group-header-row.collapsed td {
+    color: #6C757D;
+}
+
+/* Tiện ích căn lề và độ rộng cột */
+.text-left {
+    text-align: left !important;
+    padding-left: 15px !important;
+}
+
+.col-task-name {
+    width: 30%;
+}
+
+.col-assignee {
+    width: 15%;
+}
+
+.col-actions {
+    width: 15%;
+    border-right: none !important;
+}
+
+/* Cột cuối bỏ lưới dọc */
+.task-grid-table th:last-child {
+    border-right: none;
+}
+
+/* Các nhãn dán trạng thái (Badges) */
+.badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Mã màu đồng bộ theo trạng thái */
+.bg-blue {
+    background-color: #0D6EFD;
+}
+
+.bg-purple {
+    background-color: #6F42C1;
+}
+
+.bg-gray {
+    background-color: #E9ECEF;
+    color: #444;
+}
+
+/* Màu sắc nhãn Ưu Tiên (Dựa trên hình) */
+.badge-priority-low {
+    background-color: #E2EAFB;
+    color: #0D6EFD;
+}
+
+/* Nền nhạt - chữ đậm */
+.badge-priority-medium {
+    background-color: #FFF3CD;
+    color: #FFC107;
+}
+
+/* Nền nhạt - chữ đậm */
+.badge-priority-high {
+    background-color: #FBD7D9;
+    color: #DC3545;
+}
+
+/* Nền nhạt - chữ đậm */
+
+/* Màu sắc nhãn Tiến Độ (Dựa trên hình) */
+.badge-progress-ontrack {
+    background-color: #E6F3E6;
+    color: #198754;
+}
+
+/* Nền xanh nhạt - chữ đậm */
+.badge-progress-atrisk {
+    background-color: #FFF3CD;
+    color: #E09F00;
+}
+
+/* Nền nhạt - chữ đậm hơn */
+.badge-progress-late {
+    background-color: #FBD7D9;
+    color: #DC3545;
+}
+
+/* Nền nhạt - chữ đậm */
+
+/* Nút hành động (Sửa/Xóa) nhỏ và màu chuẩn */
+.btn-icon-action {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+.btn-edit {
+    background-color: #FFC107;
+    color: #212529;
+}
+
+.btn-delete {
+    background-color: #DC3545;
+}
+
+/* Thay đổi wrapper chính */
+.container {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+
+/* Loại bỏ style cũ của main-card nếu có và áp dụng cho task-list-card */
+.task-list-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    /* Bo góc mềm mại hơn */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Đổ bóng sâu như ảnh mẫu */
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Phần header info phía trên (không đổ bóng) */
+.project-header-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px;
+    /* Giảm padding ngang để thẳng hàng với card dưới */
+    border-bottom: none;
+    /* Bỏ gạch chân nếu muốn tách rời hoàn toàn */
+}
+
+/* Màu xanh cho ngày tháng trong bảng */
+.text-blue {
+    color: #0D6EFD;
+    font-weight: 500;
+}
+
+/* CSS CHO PHẦN PHÂN TRANG (PAGINATION) */
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Căn phải như ảnh */
+    padding: 20px 25px;
+}
+
+.pagination {
+    display: flex;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #0D6EFD;
+    border-right: 1px solid #DEE2E6;
+    background-color: white;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.pagination a:last-child {
+    border-right: none;
+}
+
+.pagination a.active {
+    background-color: #0D6EFD;
+    color: white;
+    border-color: #0D6EFD;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #F8F9FA;
+}
+
+/* TINH CHỈNH MÀU SẮC BADGE (MÀU ĐẬM VÀ RÕ HƠN) */
+.badge-priority-low {
+    background-color: #00CFE8;
+    color: white;
+}
+
+/* Màu xanh cyan */
+.badge-priority-medium {
+    background-color: #FF9F43;
+    color: white;
+}
+
+/* Màu cam */
+.badge-priority-high {
+    background-color: #EA5455;
+    color: white;
+}
+
+/* Màu đỏ */
+
+.badge-progress-ontrack {
+    background-color: #28C76F;
+    color: white;
+}
+
+/* Màu xanh lá */
+.badge-progress-atrisk {
+    background-color: #FF9F43;
+    color: white;
+}
+
+/* Màu cam */
+.badge-progress-late {
+    background-color: #EA5455;
+    color: white;
+}
+
+/* Màu đỏ */
+
+/* Đồng bộ lại Table để vừa khít trong card */
+table.task-grid-table {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+}
