@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -185,9 +185,7 @@ body {
     width: 100%;
 }
 
-
 .modal {
-    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -199,7 +197,7 @@ body {
 .modal-content {
     background: #ffffff;
     width: 480px;
-    margin: 100px auto;
+    margin: 50px auto;
     border-radius: 8px;
     transform: translateY(-20px);
     transition: all 0.3s ease;
@@ -236,6 +234,10 @@ body {
     font-size: 16px;
 }
 
+.delete p {
+    margin-bottom: 20px;
+}
+
 .modal-body input,
 .modal-body textarea {
     width: 100%;
@@ -258,7 +260,9 @@ body {
     padding: 40px 24px 8px;
 }
 
-.modal-footer .btn-primary {
+.modal-footer .btn-primary,
+.modal-footer .btn-delete,
+.modal-footer .btn-cancel {
     width: 58px;
     height: 33px;
 }
@@ -266,6 +270,20 @@ body {
 .btn-cancel {
     background: #6C757D;
     color: #FFFFFF;
-    width: 58px;
-    height: 33px;
+}
+
+.error {
+    color: #FF4D4F;
+    font-size: 10px;
+    margin-top: -5px;
+    display: block;
+    min-height: 18px;
+}
+
+.add {
+    display: none;
+}
+
+.delete {
+    display: none;
 }

@@ -72,7 +72,7 @@
             </tr>
         </table>
 
-        <div id="projectModal" class="modal">
+        <div class="modal add">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 id="modalTitle">Thêm/sửa dự án</h3>
@@ -82,6 +82,7 @@
                 <div class="modal-body">
                     <label>Tên dự án</label>
                     <input type="text" id="projectName" placeholder="Nhập tên dự án">
+                    <p class="error">Tên danh mục đã tồn tại</p>
 
                     <label>Mô tả dự án</label>
                     <textarea id="projectDesc" placeholder="Nhập mô tả"></textarea>
@@ -90,6 +91,24 @@
                 <div class="modal-footer">
                     <button class="btn btn-cancel">Hủy</button>
                     <button class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal delete">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Xóa dự án</h3>
+                    <span class="close">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa dự án này?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel">Hủy</button>
+                    <button class="btn btn-delete">Xóa</button>
                 </div>
             </div>
         </div>

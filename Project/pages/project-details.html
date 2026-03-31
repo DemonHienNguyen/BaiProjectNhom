@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết dự án</title>
+    <link rel="stylesheet" href="../css/project-details.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>Quản Lý Dự Án</h2>
+        <nav>
+            <a href="#">Dự Án</a>
+            <a href="#">Nhiệm vụ của tôi</a>
+            <a href="#">Đăng Xuất</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="project-header">
+            <div class="task-wrapper">
+                <h2>Xây dựng website thương mại điện tử</h2>
+                <p>
+                    Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng,
+                    thanh toán và quản lý sản phẩm.
+                </p>
+                <button>+ Thêm nhiệm vụ</button>
+            </div>
+
+            <div>
+                <div class="add-members">
+                    <p>Thành viên</p>
+                    <button>+ Thêm thành viên</button>
+                </div>
+
+                <div class="members">
+                    <div class="member">
+                        <div class="avatar blue">AN</div>
+                        <div>
+                            <b>An Nguyễn</b>
+                            <p>Project owner</p>
+                        </div>
+                    </div>
+
+                    <div class="member">
+                        <div class="avatar purple">BA</div>
+                        <div>
+                            <b>Bách Nguyễn</b>
+                            <p>Frontend developer</p>
+                        </div>
+                    </div>
+
+                    <button class="avatar more"></button>
+
+                </div>
+
+                <div class="action-bar">
+                    <select>
+                        <option>Sắp xếp theo</option>
+                    </select>
+                    <input type="text" placeholder="Tìm kiếm nhiệm vụ">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Danh Sách Nhiệm Vụ</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên nhiệm vụ</th>
+                        <th>Người phụ trách</th>
+                        <th>Ưu tiên</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Hạn chót</th>
+                        <th>Tiến độ</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr class="group">
+                        <td colspan="7">▼ To do</td>
+                    </tr>
+
+                    <tr>
+                        <td>Soạn thảo đề cương dự án</td>
+                        <td>An Nguyễn</td>
+                        <td><span class="tag blue">Thấp</span></td>
+                        <td>02-24</td>
+                        <td>02-27</td>
+                        <td><span class="status green">Đúng tiến độ</span></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Soạn thảo đề cương dự án</td>
+                        <td>An Nguyễn</td>
+                        <td><span class="tag orange">Trung bình</span></td>
+                        <td>02-24</td>
+                        <td>02-27</td>
+                        <td><span class="status orange">Có rủi ro</span></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Soạn thảo đề cương dự án</td>
+                        <td>An Nguyễn</td>
+                        <td><span class="tag red">Cao</span></td>
+                        <td>02-24</td>
+                        <td>02-27</td>
+                        <td><span class="status red">Trễ hạn</span></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+
+                    <tr class="group">
+                        <td colspan="7">▼ In Progress</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lên lịch họp kickoff</td>
+                        <td>An Nguyễn</td>
+                        <td><span class="tag orange">Trung bình</span></td>
+                        <td>02-24</td>
+                        <td>02-27</td>
+                        <td><span class="status orange">Có rủi ro</span></td>
+                        <td>
+                            <button class="btn-edit">Sửa</button>
+                            <button class="btn-delete">Xóa</button>
+                        </td>
+                    </tr>
+
+                    <tr class="group">
+                        <td colspan="7">▶ Pending</td>
+                    </tr>
+
+                    <tr class="group">
+                        <td colspan="7">▶ Done</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="modal add-task">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Thêm/sửa nhiệm vụ</h3>
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <label>Tên nhiệm vụ</label>
+                <input type="text">
+                <p class="error">Tên nhiệm vụ đã tồn tại</p>
+
+                <label>Người phụ trách</label>
+                <select>
+                    <option>Chọn người phụ trách</option>
+                </select>
+
+                <label>Trạng thái</label>
+                <select>
+                    <option>Chọn trạng thái</option>
+                    <option>Chưa bắt đầu</option>
+                    <option>Đang thực hiện</option>
+                    <option>Hoàn thành</option>
+                </select>
+
+                <label>Ngày bắt đầu</label>
+                <input type="date">
+
+                <label>Hạn cuối</label>
+                <input type="date">
+
+                <label>Độ ưu tiên</label>
+                <select>
+                    <option>Chọn độ ưu tiên</option>
+                    <option>Thấp</option>
+                    <option>Trung bình</option>
+                    <option>Cao</option>
+                </select>
+
+                <label>Tiến độ</label>
+                <select>
+                    <option>Chọn tiến độ</option>
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cancel">Hủy</button>
+                <button class="btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal add-member">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Thêm thành viên</h3>
+                <span class="close">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <label>Email</label>
+                <input type="email">
+                <p class="error">Thành viên đã tồn tại</p>
+
+                <label>Vai trò</label>
+                <input type="text">
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cancel">Hủy</button>
+                <button class="btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

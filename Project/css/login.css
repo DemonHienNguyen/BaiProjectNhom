@@ -81,4 +81,5 @@ button {
     display: block;
     min-height: 18px;
     text-align: center;
+    display: none;
 }
