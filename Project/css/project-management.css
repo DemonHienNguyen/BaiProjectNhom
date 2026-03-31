@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F8F9FA;
+    color: #212529;
+}
+
+.header {
+    background: #000000;
+    padding: 12px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    color: white;
+    font-weight: 400;
+    font-size: 19.74px;
+}
+
+.header nav {
+    display: flex;
+    gap: 15.9px;
+}
+
+.header nav a {
+    color: white;
+    font-size: 15.61px;
+    text-decoration: none;
+}
+
+.container {
+    width: 1296px;
+    margin: auto;
+}
+
+.card {
+    background: #FFFFFF;
+    border: 1px solid #0000002D;
+    padding: 25px;
+    margin: 24px 0 24px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075);
+}
+
+.card h3 {
+    font-weight: 600;
+    font-size: 23.59px;
+    margin-bottom: 24.2px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15.8px;
+}
+
+.top-bar input {
+    padding: 7px 13px;
+    width: 433px;
+    border: 1px solid #DEE2E6;
+    border-radius: 6px;
+    color: #A9A9A9;
+}
+
+.card h4 {
+    font-weight: 600;
+    font-size: 19.77px;
+    margin-bottom: 8px;
+}
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #DEE2E6;
+}
+
+.card thead {
+    background: #212529;
+    color: white;
+    border: 1px solid #373B3E;
+}
+
+.card th,
+.card td {
+    padding: 10px;
+    border: 1px solid #DEE2E6;
+    text-align: center;
+}
+
+.card td {
+    border-bottom: 1px solid #f3f2f2af;
+}
+
+.card td:nth-child(1),
+.card th:nth-child(1) {
+    width: 8%;
+}
+
+.card td:nth-child(2),
+.card th:nth-child(2) {
+    text-align: left;
+    width: 70%;
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 31px;
+}
+
+.btn-primary {
+    width: 150px;
+    height: 38px;
+    background: #0D6EFD;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+
+.btn-edit {
+    background: #FFC107;
+    color: #000000;
+    width: 61px;
+}
+
+.btn-delete {
+    background: #DC3545;
+    color: #FFFFFF;
+    width: 41px;
+}
+
+.btn-detail {
+    background: #0D6EFD;
+    color: #FFFFFF;
+    width: 61px;
+}
+
+.pagination {
+    border-spacing: 0;
+    border: 1px solid #DEE2E6;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto 24px;
+}
+
+.pagination td {
+    width: 40px;
+    padding: 11px 13px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #DEE2E6;
+    color: #0D6EFD;
+    background: #FFFFFF;
+}
+
+.pagination td:hover {
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+}
+
+.pagination .prev {
+    color: #21252956;
+    background-color: #E9ECEF;
+}
+
+.pagination .next {
+    color: #212529;
+    background-color: #FFFFFF;
+}
+
+.footer {
+    background: #212529;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #ffffff;
+    width: 480px;
+    margin: 100px auto;
+    border-radius: 8px;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+}
+
+.modal-content.show {
+    transform: translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DEE2E6;
+    padding: 17.5px;
+}
+
+.modal-header h3 {
+    font-size: 23.3px;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 30px;
+    color: #0000006e;
+}
+
+.modal-body {
+    width: 432px;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.modal-body input,
+.modal-body textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #DEE2E6;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.modal-body textarea {
+    height: 80px;
+}
+
+
+.modal-footer {
+    border-top: 1px solid #DEE2E6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 40px 24px 8px;
+}
+
+.modal-footer .btn-primary {
+    width: 58px;
+    height: 33px;
+}
+
+.btn-cancel {
+    background: #6C757D;
+    color: #FFFFFF;
+    width: 58px;
+    height: 33px;
+}

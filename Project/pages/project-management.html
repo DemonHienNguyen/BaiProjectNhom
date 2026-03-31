@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Dự Án</title>
+    <link rel="stylesheet" href="../css/project-management.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>Quản Lý Dự Án</h2>
+        <nav>
+            <a href="#">Dự án</a>
+            <a href="#">Nhiệm vụ của tôi</a>
+            <a href="#">Đăng xuất</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h3>Quản Lý Dự Án Nhóm</h3>
+
+            <div class="top-bar">
+                <button class="btn btn-primary">+ Thêm Dự Án</button>
+                <input type="text" placeholder="Tìm kiếm dự án">
+            </div>
+
+            <h4>Danh Sách Dự Án</h4>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Dự Án</th>
+                        <th>Hành Động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Xây dựng website thương mại điện tử</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Phát triển ứng dụng di động</td>
+                        <td>
+                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-delete">Xóa</button>
+                            <button class="btn btn-detail">Chi tiết</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <table class="pagination">
+            <tr>
+                <td class="prev">&lt</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td class="next">&gt</td>
+            </tr>
+        </table>
+
+        <div id="projectModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Thêm/sửa dự án</h3>
+                    <span class="close">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <label>Tên dự án</label>
+                    <input type="text" id="projectName" placeholder="Nhập tên dự án">
+
+                    <label>Mô tả dự án</label>
+                    <textarea id="projectDesc" placeholder="Nhập mô tả"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel">Hủy</button>
+                    <button class="btn btn-primary">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

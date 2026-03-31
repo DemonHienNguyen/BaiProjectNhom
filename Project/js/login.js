@@ -1,3 +1,3 @@
 function login() {
-    window.location.href = "../pages/index.html"
+    window.location.href = "../pages/project-management.html"
 }

@@ -9,18 +9,21 @@
 </head>
 
 <body>
+    <h2>Đăng nhập</h2>
 
     <div class="box">
-        <h2>🔐 Đăng nhập</h2>
+        <label>Email</label>
+        <input type="text" id="email" placeholder="Địa chỉ email">
+        <p class="error" id="emailError">* Email không hợp lệ</p>
 
-        <input type="text" placeholder="Tên đăng nhập">
-
-        <input type="password" placeholder="Mật khẩu">
+        <label>Mật khẩu</label>
+        <input type="password" id="password" placeholder="Mật khẩu">
+        <p class="error" id="passwordError">* Mật khẩu không đúng</p>
 
         <button id="login-btn" onclick="login()">Đăng nhập</button>
 
         <div class="signup">
-            Chưa có tài khoản? <a href="./register.html" >Đăng ký ngay</a>
+            Chưa có tài khoản? <a href="./register.html">Đăng ký</a>
         </div>
     </div>
 
