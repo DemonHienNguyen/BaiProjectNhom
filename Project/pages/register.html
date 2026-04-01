@@ -12,19 +12,19 @@
     <h2>Đăng ký</h2>
 
     <div class="box">
-        <input type="text" id="fullname" placeholder="Họ và tên">
-        <p class="error" id="fullnameError">Họ và tên không được để trống</p>
+        <input type="text" id="username" placeholder="Họ và tên">
+        <p class="error error-name"></p>
 
         <input type="email" id="email" placeholder="Địa chỉ email">
-        <p class="error" id="emailError">Email không hợp lệ</p>
+        <p class="error error-email"></p>
 
         <input type="password" id="password" placeholder="Mật khẩu">
-        <p class="error" id="passwordError">Mật khẩu phải có ít nhất 6 ký tự</p>
+        <p class="error error-password"></p>
 
         <input type="password" id="confirmPassword" placeholder="Xác nhận Mật khẩu">
-        <p class="error" id="confirmPasswordError">Mật khẩu xác nhận không khớp</p>
+        <p class="error error-confirmPassword"></p>
 
-        <button onclick="register()">Đăng ký</button>
+        <button onclick="register(event)">Đăng ký</button>
 
         <div class="login">
             Đã có tài khoản? <a href="./login.html">Đăng nhập</a>

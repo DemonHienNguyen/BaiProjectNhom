@@ -14,13 +14,12 @@
     <div class="box">
         <label>Email</label>
         <input type="text" id="email" placeholder="Địa chỉ email">
-        <p class="error" id="emailError">Email không hợp lệ</p>
 
         <label>Mật khẩu</label>
         <input type="password" id="password" placeholder="Mật khẩu">
-        <p class="error" id="passwordError">Mật khẩu không đúng</p>
+        <p class="error" id="error-login">Email hoặc mật khẩu không đúng</p>
 
-        <button id="login-btn" onclick="login()">Đăng nhập</button>
+        <button id="login-btn" onclick="login(event)">Đăng nhập</button>
 
         <div class="signup">
             Chưa có tài khoản? <a href="./register.html">Đăng ký</a>

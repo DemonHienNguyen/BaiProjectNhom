@@ -19,7 +19,7 @@ body {
 }
 
 .header h2 {
-    color: white;
+    color: #FFFFFF;
     font-weight: 400;
     font-size: 19.74px;
 }
@@ -30,9 +30,17 @@ body {
 }
 
 .header nav a {
-    color: white;
+    color: #FFFFFF8C;
     font-size: 15.61px;
     text-decoration: none;
+}
+
+.header nav a:hover {
+    color: #FFFFFF;
+}
+
+.header nav .active {
+    color: #FFFFFF;
 }
 
 .container {
@@ -98,6 +106,10 @@ body {
     border-bottom: 1px solid #f3f2f2af;
 }
 
+.card tr:hover td {
+    background-color: #efefef;
+}
+
 .card td:nth-child(1),
 .card th:nth-child(1) {
     width: 8%;
@@ -114,6 +126,12 @@ body {
     border-radius: 4px;
     cursor: pointer;
     height: 31px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .btn-primary {
@@ -202,6 +220,10 @@ body {
     transform: translateY(-20px);
 }
 
+.add, .delete, .edit, .logout {
+    display: none;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -267,18 +289,33 @@ body {
     color: #FFFFFF;
 }
 
+.logout .modal-footer .btn-delete {
+    width: 75px;
+}
+
 .error {
     color: #FF4D4F;
     font-size: 10px;
     margin-top: -5px;
-    display: block;
+    display: none;
     min-height: 18px;
 }
 
-.add {
-    display: none;
+.toast {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s;
 }
 
-.delete {
-    display: none;
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
 }

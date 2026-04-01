@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết dự án</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../css/project-details.css">
 </head>
 
@@ -13,9 +14,9 @@
     <header class="header">
         <h2>Quản Lý Dự Án</h2>
         <nav>
-            <a href="#">Dự Án</a>
+            <a href="../pages/project-management.html" class="active">Dự Án</a>
             <a href="#">Nhiệm Vụ của tôi</a>
-            <a href="#">Đăng Xuất</a>
+            <a href="#" class="active" onclick="showLogoutModal()">Đăng Xuất</a>
         </nav>
     </header>
 
@@ -28,18 +29,18 @@
                     Dự án nhằm phát triển một nền tảng thương mại điện tử với các tính năng như giỏ hàng,
                     thanh toán và quản lý sản phẩm.
                 </p>
-                <button onclick="showAddTaskModal()">+ Thêm nhiệm vụ</button>
+                <button class="btn" onclick="showAddTaskModal()">+ Thêm nhiệm vụ</button>
             </div>
 
             <div>
                 <div class="add-members">
                     <p>Thành viên</p>
-                    <button onclick="showAddMemberModal()">+ Thêm thành viên</button>
+                    <button class="btn" onclick="showAddMemberModal()">+ Thêm thành viên</button>
                 </div>
 
                 <div class="members">
                     <div class="member">
-                        <div class="avatar blue">AN</div>
+                        <div class="avatar avatar-blue">AN</div>
                         <div>
                             <b>An Nguyễn</b>
                             <p>Project owner</p>
@@ -47,14 +48,15 @@
                     </div>
 
                     <div class="member">
-                        <div class="avatar purple">BA</div>
+                        <div class="avatar avatar-purple">BA</div>
                         <div>
                             <b>Bách Nguyễn</b>
                             <p>Frontend developer</p>
                         </div>
                     </div>
 
-                    <button class="avatar more"></button>
+                    <button class="btn avatar more" onclick="showMoreMembersModal()"><i
+                            class="fa-solid fa-ellipsis"></i></button>
 
                 </div>
 
@@ -97,8 +99,8 @@
                         <td>02-27</td>
                         <td><span class="status green">Đúng tiến độ</span></td>
                         <td>
-                            <button class="btn-edit">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                         </td>
                     </tr>
 
@@ -110,8 +112,8 @@
                         <td>02-27</td>
                         <td><span class="status orange">Có rủi ro</span></td>
                         <td>
-                            <button class="btn-edit">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                         </td>
                     </tr>
 
@@ -123,8 +125,8 @@
                         <td>02-27</td>
                         <td><span class="status red">Trễ hạn</span></td>
                         <td>
-                            <button class="btn-edit">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                         </td>
                     </tr>
 
@@ -140,8 +142,8 @@
                         <td>02-27</td>
                         <td><span class="status orange">Có rủi ro</span></td>
                         <td>
-                            <button class="btn-edit">Sửa</button>
-                            <button class="btn-delete">Xóa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
+                            <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                         </td>
                     </tr>
 
@@ -162,14 +164,14 @@
     <div class="modal add-task">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 id="modalTitle">Thêm/sửa nhiệm vụ</h3>
+                <h3 id="modalTitle">Thêm nhiệm vụ</h3>
                 <span class="close" onclick="cancelModal()">&times;</span>
             </div>
 
             <div class="modal-body">
                 <label>Tên nhiệm vụ</label>
                 <input type="text">
-                <p class="error">Tên nhiệm vụ đã tồn tại</p>
+                <p class="error error-task">Tên nhiệm vụ đã tồn tại</p>
 
                 <label>Người phụ trách</label>
                 <select>
@@ -205,8 +207,59 @@
             </div>
 
             <div class="modal-footer">
-                <button class="btn-cancel" onclick="cancelModal()">Hủy</button>
-                <button class="btn-primary">Lưu</button>
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-primary" onclick="addTask()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal edit-task">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Sửa nhiệm vụ</h3>
+                <span class="close" onclick="cancelModal()">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <label>Tên nhiệm vụ</label>
+                <input type="text">
+
+                <label>Người phụ trách</label>
+                <select>
+                    <option>Chọn người phụ trách</option>
+                </select>
+
+                <label>Trạng thái</label>
+                <select>
+                    <option>Chọn trạng thái</option>
+                    <option>Chưa bắt đầu</option>
+                    <option>Đang thực hiện</option>
+                    <option>Hoàn thành</option>
+                </select>
+
+                <label>Ngày bắt đầu</label>
+                <input type="date">
+
+                <label>Hạn cuối</label>
+                <input type="date">
+
+                <label>Độ ưu tiên</label>
+                <select>
+                    <option>Chọn độ ưu tiên</option>
+                    <option>Thấp</option>
+                    <option>Trung bình</option>
+                    <option>Cao</option>
+                </select>
+
+                <label>Tiến độ</label>
+                <select>
+                    <option>Chọn tiến độ</option>
+                </select>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-primary" onclick="editTask()">Lưu</button>
             </div>
         </div>
     </div>
@@ -221,15 +274,124 @@
             <div class="modal-body">
                 <label>Email</label>
                 <input type="email">
-                <p class="error">Thành viên đã tồn tại</p>
+                <p class="error error-member">Thành viên đã tồn tại</p>
 
                 <label>Vai trò</label>
                 <input type="text">
             </div>
 
             <div class="modal-footer">
-                <button class="btn-cancel" onclick="cancelModal()">Hủy</button>
-                <button class="btn-primary">Lưu</button>
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-primary" onclick="addMember()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal more-members">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Thành viên</h3>
+                <span class="close" onclick="cancelModal()">&times;</span>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="member-title">
+                    <p>Thành viên</p>
+                    <p>Vai trò</p>
+                </div>
+
+                <table class="member-table">
+
+                        <tr>
+                            <td class="member-info">
+                                <div class="avatar avatar-blue">AN</div>
+                                <div>
+                                    <p class="member-name">An Nguyễn</p>
+                                    <p class="member-email">nguyenquangan@gmail.com</p>
+                                </div>
+                            </td>
+
+                            <td class="member-role">
+                                <input type="text" value="Frontend developer">
+                                <span class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(220, 53, 69);"></i></span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="member-info">
+                                <div class="avatar avatar-dark-purple">BA</div>
+                                <div>
+                                    <p class="member-name">Bách Nguyễn</p>
+                                    <p class="member-email">bachnx@gmail.com</p>
+                                </div>
+                            </td>
+
+                            <td class="member-role">
+                                <input type="text" value="Frontend developer">
+                                <span class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(220, 53, 69);"></i></span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <td class="member-info">
+                                <div class="avatar avatar-orange">DU</div>
+                                <div>
+                                    <p class="member-name">Dương Nguyễn</p>
+                                    <p class="member-email">duongnhm@gmail.com</p>
+                                </div>
+                            </td>
+
+                            <td class="member-role">
+                                <input type="text" value="Frontend developer">
+                                <span class="delete"><i class="fa-solid fa-trash-can" style="color: rgb(220, 53, 69);"></i></span>
+                            </td>
+                        </tr>
+
+                </table>
+
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal delete-task">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Xóa nhiệm vụ</h3>
+                <span class="close" onclick="cancelModal()">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn xóa nhiệm vụ này?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-delete">Xóa</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal logout">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Xác nhận đăng xuất</h3>
+                <span class="close" onclick="cancelModal()">&times;</span>
+            </div>
+
+            <div class="modal-body">
+                <p>Bạn có chắc chắn muốn đăng xuất không?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                <button class="btn btn-delete" onclick="logout()">Xác nhận</button>
             </div>
         </div>
     </div>

@@ -13,9 +13,9 @@
     <header class="header">
         <h2>Quản Lý Dự Án</h2>
         <nav>
-            <a href="#">Dự Án</a>
+            <a href="../pages/project-management.html" class="active">Dự Án</a>
             <a href="#">Nhiệm Vụ của tôi</a>
-            <a href="#">Đăng Xuất</a>
+            <a href="#" class="active" onclick="showLogoutModal()">Đăng Xuất</a>
         </nav>
     </header>
 
@@ -43,16 +43,16 @@
                         <td>1</td>
                         <td>Xây dựng website thương mại điện tử</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
-                            <button class="btn btn-detail">Chi tiết</button>
+                            <button class="btn btn-detail" onclick="showProjectDetails()">Chi tiết</button>
                         </td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td>Phát triển ứng dụng di động</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -61,7 +61,7 @@
                         <td>3</td>
                         <td>Quản lý dữ liệu khách hàng</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -70,7 +70,7 @@
                         <td>4</td>
                         <td>Xây dựng website thương mại điện tử</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -79,7 +79,7 @@
                         <td>5</td>
                         <td>Phát triển ứng dụng di động</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -88,7 +88,7 @@
                         <td>6</td>
                         <td>Quản lý dữ liệu khách hàng</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -97,7 +97,7 @@
                         <td>7</td>
                         <td>Xây dựng website thương mại điện tử</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -106,7 +106,7 @@
                         <td>8</td>
                         <td>Phát triển ứng dụng di động</td>
                         <td>
-                            <button class="btn btn-edit">Sửa</button>
+                            <button class="btn btn-edit" onclick="showEditModal()">Sửa</button>
                             <button class="btn btn-delete" onclick="showDeleteModal()">Xóa</button>
                             <button class="btn btn-detail">Chi tiết</button>
                         </td>
@@ -138,14 +138,14 @@
         <div class="modal add">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 id="modalTitle">Thêm/sửa dự án</h3>
+                    <h3 id="modalTitle">Thêm dự án</h3>
                     <span class="close" onclick="cancelModal()">&times;</span>
                 </div>
 
                 <div class="modal-body">
                     <label>Tên dự án</label>
                     <input type="text" id="projectName" placeholder="Nhập tên dự án">
-                    <p class="error">Tên danh mục đã tồn tại</p>
+                    <p class="error error-project">Tên danh mục đã tồn tại</p>
 
                     <label>Mô tả dự án</label>
                     <textarea id="projectDesc" placeholder="Nhập mô tả"></textarea>
@@ -153,7 +153,29 @@
 
                 <div class="modal-footer">
                     <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
-                    <button class="btn btn-primary">Lưu</button>
+                    <button class="btn btn-primary" onclick="addProject()">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal edit">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Sửa dự án</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <label>Tên dự án</label>
+                    <input type="text" id="projectName" placeholder="Nhập tên dự án">
+
+                    <label>Mô tả dự án</label>
+                    <textarea id="projectDesc" placeholder="Nhập mô tả"></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                    <button class="btn btn-primary" onclick="editProject()">Lưu</button>
                 </div>
             </div>
         </div>
@@ -175,6 +197,26 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal logout">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Xác nhận đăng xuất</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn đăng xuất không?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                    <button class="btn btn-delete" onclick="logout()">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast" class="toast">Đăng xuất thành công</div>
     </main>
 
     <footer class="footer">
