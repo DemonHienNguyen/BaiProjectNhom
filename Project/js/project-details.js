@@ -1,44 +1,134 @@
-function showAddTaskModal() {
-    document.querySelector('.modal.add-task').style.display = 'block';
-}
-    
-function showAddMemberModal() {
-    document.querySelector('.modal.add-member').style.display = 'block';
-}
+// INITIAL DATA
 
-function showEditModal() {
-    document.querySelector('.modal.edit-task').style.display = 'block';
-}
+let projects = JSON.parse(localStorage.getItem("projects")) || [];
 
-function showDeleteModal() {
-    document.querySelector('.modal.delete-task').style.display = 'block';
-}
+let projectId = Number(localStorage.getItem("currentProjectId"));
 
-function showMoreMembersModal() {
-    document.querySelector('.modal.more-members').style.display = 'block';
-}
+let project = projects.find(p => p.id === projectId);
 
-function showLogoutModal() {
-    document.querySelector('.modal.logout').style.display = 'block';
-}
+if (!project.tasks) project.tasks = [];
 
-function logout(){
+
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (!currentUser) {
     window.location.href = "../pages/login.html";
 }
 
+
+// VARIABLES
+
+
+// MODAL
+
+function showModal(type) {
+    document.querySelector(`.modal.${type}`).style.display = "block";
+}
+
 function cancelModal() {
-    document.querySelector('.modal.add-task').style.display = 'none';
-    document.querySelector('.modal.add-member').style.display = 'none';
-    document.querySelector('.modal.edit-task').style.display = 'none';
-    document.querySelector('.modal.delete-task').style.display = 'none';
-    document.querySelector('.modal.more-members').style.display = 'none';
-    document.querySelector('.modal.logout').style.display = 'none';
+    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
 }
 
-function addTask() {
-    document.querySelector(".error-task").style.display = "block";
+
+// TOAST
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 1000);
+
 }
 
-function addMember() {
-    document.querySelector(".error-member").style.display = "block";
+
+// CLEAR FORM
+
+function clearForm() {
+
+    document.getElementById("").value = "";
+
+
+    document.querySelectorAll(".error").forEach(e => {
+        e.style.display = "none";
+    });
+
+    document.querySelectorAll("input").forEach(i => {
+        i.classList.remove("error-input");
+    });
+
 }
+
+
+// RENDER PROJECT INFO
+
+function renderProjectInfo() {
+
+    document.querySelector(".task-wrapper h2").innerText = project.projectName;
+
+    document.querySelector(".task-wrapper p").innerText = project.projectDesc;
+
+}
+
+
+// RENDER TASK
+
+
+// ADD TASK
+
+
+// SHOW ERROR
+
+function showError(selector, message, display, inputSelector) {
+
+    let element = document.querySelector(selector);
+    let input = document.querySelector(inputSelector);
+
+    element.textContent = message;
+    element.style.display = display;
+
+    if (display === "block") {
+        input.classList.add("error-input");
+    } else {
+        input.classList.remove("error-input");
+    }
+}
+
+
+// VALIDATE TASK
+
+
+// EDIT TASK
+
+
+// DELETE TASK
+
+
+// SEARCH TASK
+
+
+// LOGOUT
+
+function logout() {
+
+    cancelModal();
+
+    localStorage.removeItem("currentUser");
+
+    showToast("Đăng xuất thành công");
+
+    setTimeout(() => {
+        window.location.href = "../pages/login.html";
+    }, 1000);
+
+}
+
+
+// INIT
+
+renderProjectInfo();

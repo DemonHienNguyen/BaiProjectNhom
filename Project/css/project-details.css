@@ -10,6 +10,8 @@ body {
     color: #212529;
 }
 
+
+/* HEADER */
 .header {
     background: #000000;
     padding: 12px 120px;
@@ -44,6 +46,8 @@ body {
 }
 
 
+/*  MAIN LAYOUT */
+
 .container {
     width: 1296px;
     margin: auto;
@@ -54,6 +58,9 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+
+/* TASK WRAPPER */
 
 .task-wrapper {
     width: 648px;
@@ -68,6 +75,16 @@ body {
     margin-bottom: 48px;
 }
 
+.task-wrapper button {
+    background-color: #0D6EFD;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 6px;
+}
+
+
+/*  BUTTON */
+
 .btn {
     border: none;
     border-radius: 4px;
@@ -81,12 +98,8 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.task-wrapper button {
-    background-color: #0D6EFD;
-    color: white;
-    padding: 7px 16px;
-    border-radius: 6px;
-}
+
+/* MEMBER SECTION */
 
 .add-members {
     display: flex;
@@ -132,6 +145,9 @@ body {
     color: #00000080;
 }
 
+
+/* AVATAR */
+
 .avatar {
     width: 40px;
     height: 40px;
@@ -149,6 +165,25 @@ body {
     font-size: 20px;
 }
 
+.avatar-blue {
+    background-color: #0D6EFD;
+}
+
+.avatar-purple {
+    background-color: #8A2BE2;
+}
+
+.avatar-dark-purple {
+    background-color: #800080;
+}
+
+.avatar-orange {
+    background-color: #FFA500;
+}
+
+
+/* ACTION BAR (SEARCH / FILTER) */
+
 .action-bar input,
 .action-bar select {
     padding: 6px 12px;
@@ -165,6 +200,9 @@ body {
     width: 220px;
     color: #A9A9A9;
 }
+
+
+/* CARD / TABLE */
 
 .card {
     margin-top: 16px;
@@ -217,6 +255,9 @@ body {
     font-size: 15.47px;
 }
 
+
+/* TAG & STATUS */
+
 .tag {
     padding: 4px 8px;
     border-radius: 6px;
@@ -260,6 +301,8 @@ body {
     width: 43px;
 }
 
+
+/* FOOTER */
 .footer {
     margin-top: 24px;
     background: #212529;
@@ -268,6 +311,8 @@ body {
     padding: 16px;
 }
 
+
+/* MODAL */
 .modal {
     position: fixed;
     left: 0;
@@ -277,7 +322,12 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.add-task, .add-member, .delete-task, .more-members, .logout, .edit-task {
+.add-task,
+.add-member,
+.delete-task,
+.more-members,
+.logout,
+.edit-task {
     display: none;
 }
 
@@ -293,7 +343,8 @@ body {
     width: 600px;
 }
 
-.add-task .modal-content {
+.add-task .modal-content
+.edit-task .modal-content {
     margin: 35px auto;
 }
 
@@ -350,10 +401,10 @@ body {
     padding-bottom: 26px;
 }
 
-.member-info{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.member-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .member-name {
@@ -406,6 +457,9 @@ body {
     width: 75px;
 }
 
+
+/* FORM ERROR */
+
 .error {
     color: #FF4D4F;
     font-size: 10px;
@@ -414,18 +468,28 @@ body {
     min-height: 18px;
 }
 
-.avatar-blue {
-    background-color: #0D6EFD;
+.error-input {
+    border: 2px solid #FF4D4F;
 }
 
-.avatar-purple {
-    background-color: #8A2BE2;
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background-color: #FF4D4F;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s;
 }
 
-.avatar-dark-purple {
-    background-color: #800080;
-}
-
-.avatar-orange {
-    background-color: #FFA500;
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
 }

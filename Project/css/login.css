@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -11,9 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 h2 {
@@ -80,10 +78,29 @@ button {
     margin-bottom: 20px;
     display: block;
     min-height: 18px;
-    text-align: center;
+    text-align: left;
     display: none;
 }
 
 .error-input {
     border: 2px solid #FF4D4F;
+}
+
+.toast {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 0.3s;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
 }
