@@ -49,7 +49,8 @@ body {
 /* LAYOUT CONTAINER */
 
 .container {
-    width: 1296px;
+    max-width: 1296px;
+    width: 90%;
     margin: auto;
 }
 

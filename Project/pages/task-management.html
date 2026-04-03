@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý nhiệm vụ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/task-management.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h2>Quản Lý Dự Án</h2>
+        <nav>
+            <a href="../pages/project-management.html">Dự Án</a>
+            <a href="../pages/task-management.html" class="active">Nhiệm Vụ của tôi</a>
+            <a href="#" onclick="showModal('logout')">Đăng Xuất</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <div class="container">
+
+            <div class="project-header">
+                <h2>Quản lý nhiệm vụ</h2>
+
+                <div class="action-bar">
+                    <select>
+                        <option>Sắp xếp theo</option>
+                        <option>Hạn chót</option>
+                        <option>Ưu tiên</option>
+                    </select>
+
+                    <input type="text" placeholder="Tìm kiếm nhiệm vụ">
+                </div>
+            </div>
+
+
+            <div class="card">
+
+                <h3>Danh Sách Nhiệm Vụ</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên Nhiệm Vụ</th>
+                            <th>Độ ưu tiên</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày Bắt Đầu</th>
+                            <th>Hạn Chót</th>
+                            <th>Tiến độ</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr class="project">
+                            <td colspan="6">▼ Xây dựng website thương mại điện tử</td>
+                        </tr>
+
+                        <tr>
+                            <td>Soạn thảo đề cương dự án</td>
+                            <td><span class="tag blue">Thấp</span></td>
+                            <td>In progress <span onclick="showModal('update')"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                            <td class="date">02 - 24</td>
+                            <td class="date">02 - 27</td>
+                            <td><span class="status green">Đúng tiến độ</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Soạn thảo đề cương dự án</td>
+                            <td><span class="tag orange">Trung bình</span></td>
+                            <td>In progress <span onclick="showModal('update')"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                            <td class="date">02 - 24</td>
+                            <td class="date">02 - 27</td>
+                            <td><span class="status orange">Có rủi ro</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Soạn thảo đề cương dự án</td>
+                            <td><span class="tag red">Cao</span></td>
+                            <td>Pending <span onclick="showModal('update')"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                            <td class="date">02 - 24</td>
+                            <td class="date">02 - 27</td>
+                            <td><span class="status red">Trễ hạn</span></td>
+                        </tr>
+
+
+                        <tr class="project">
+                            <td colspan="6">▼ Phát triển ứng dụng di động</td>
+                        </tr>
+
+                        <tr>
+                            <td>Lên lịch họp kickoff</td>
+                            <td><span class="tag blue">Thấp</span></td>
+                            <td>In progress <span onclick="showModal('update')"><i class="fa-regular fa-pen-to-square"></i></span></td>
+                            <td class="date">02 - 24</td>
+                            <td class="date">02 - 27</td>
+                            <td><span class="status orange">Có rủi ro</span></td>
+                        </tr>
+
+                        <tr class="project">
+                            <td colspan="6">▶ Quản lý dữ liệu khách hàng</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <div class="modal update">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3>Cập nhật trạng thái</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Xác nhận cập nhật trạng thái nhiệm vụ</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                    <button class="btn btn-primary">Xác nhận</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal logout">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h3>Xác nhận đăng xuất</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn đăng xuất không?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                    <button class="btn btn-delete" onclick="logout()">Xác nhận</button>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        © 2025 Quản Lý Dự Án Nhóm. All rights reserved.
+    </footer>
+
+    <script src="../js/task-management.js"></script>
+
+</body>
+
+</html>

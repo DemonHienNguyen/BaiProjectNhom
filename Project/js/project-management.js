@@ -63,8 +63,6 @@ function clearForm() {
     document.getElementById("addProjectName").value = "";
     document.getElementById("addProjectDesc").value = "";
 
-    document.getElementById("editProjectName").value = "";
-    document.getElementById("editProjectDesc").value = "";
 
     document.querySelectorAll(".error").forEach(e => {
         e.style.display = "none";
@@ -132,11 +130,9 @@ function renderProjects() {
 
     pageData.forEach((project, index) => {
 
-        let stt = start + index + 1;
-
         html += `
         <tr>
-            <td>${stt}</td>
+            <td>${project.id}</td>
             <td>${project.projectName}</td>
             <td>
                 <button class="btn btn-edit" onclick="openEdit(${project.id})">Sửa</button>
@@ -164,7 +160,7 @@ function addProject() {
 
     let newProject = {
 
-        id: projects.length ? projects[projects.length - 1].id + 1 : 1,
+        id: Math.floor(Math.random() * 1000) + new Date().getMilliseconds(),
         projectName: name,
         projectDesc: desc,
         members: [

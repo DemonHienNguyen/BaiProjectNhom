@@ -1,3 +1,10 @@
+let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (currentUser) {
+    window.location.href = "../pages/project-management.html";
+}
+
+
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
 function login(e) {

@@ -15,7 +15,7 @@
         <h2>Quản Lý Dự Án</h2>
         <nav>
             <a href="../pages/project-management.html" class="active">Dự Án</a>
-            <a href="#">Nhiệm Vụ của tôi</a>
+            <a href="../pages/task-management.html">Nhiệm Vụ của tôi</a>
             <a href="#" class="active" onclick="showModal('logout')">Đăng Xuất</a>
         </nav>
     </header>
@@ -92,11 +92,11 @@
 
                     <tbody>
 
-                        <tr class="group">
-                            <td colspan="7">▼ To do</td>
-                        </tr>
+                        <!-- <tr class="project">
+                            <td colspan="7"><span>▶</span> To do</td>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>Soạn thảo đề cương dự án</td>
                             <td>An Nguyễn</td>
                             <td><span class="tag blue">Thấp</span></td>
@@ -107,9 +107,9 @@
                                 <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
                                 <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
                             </td>
-                        </tr>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>Soạn thảo đề cương dự án</td>
                             <td>An Nguyễn</td>
                             <td><span class="tag orange">Trung bình</span></td>
@@ -120,9 +120,9 @@
                                 <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
                                 <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
                             </td>
-                        </tr>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>Soạn thảo đề cương dự án</td>
                             <td>An Nguyễn</td>
                             <td><span class="tag red">Cao</span></td>
@@ -133,13 +133,13 @@
                                 <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
                                 <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
                             </td>
-                        </tr>
+                        </tr> -->
 
-                        <tr class="group">
-                            <td colspan="7">▼ In Progress</td>
-                        </tr>
+                        <!-- <tr class="project">
+                            <td colspan="7"><span>▶</span> In Progress</td>
+                        </tr> -->
 
-                        <tr>
+                        <!-- <tr>
                             <td>Lên lịch họp kickoff</td>
                             <td>An Nguyễn</td>
                             <td><span class="tag orange">Trung bình</span></td>
@@ -150,15 +150,15 @@
                                 <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
                                 <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
                             </td>
-                        </tr>
+                        </tr> -->
 
-                        <tr class="group">
-                            <td colspan="7">▶ Pending</td>
-                        </tr>
+                        <!-- <tr class="project">
+                            <td colspan="7"><span>▶</span> Pending</td>
+                        </tr> -->
 
-                        <tr class="group">
-                            <td colspan="7">▶ Done</td>
-                        </tr>
+                        <!-- <tr class="project">
+                            <td colspan="7"><span>▶</span> Done</td>
+                        </tr> -->
 
                     </tbody>
                 </table>
@@ -181,17 +181,16 @@
                     <label>Người phụ trách</label>
                     <select id="addTaskAssignee">
                         <option value="">Chọn người phụ trách</option>
-                        <option value="1">Nguyễn Văn A</option>
-                        <option value="2">Trần Văn B</option>
-                        <option value="3">Lê Văn C</option>
+                        <option value="1">An Nguyễn</option>
                     </select>
 
                     <label>Trạng thái</label>
                     <select id="addTaskStatus">
                         <option value="">Chọn trạng thái</option>
-                        <option value="not_started">Chưa bắt đầu</option>
-                        <option value="in_progress">Đang thực hiện</option>
-                        <option value="completed">Hoàn thành</option>
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
                     </select>
 
                     <label>Ngày bắt đầu</label>
@@ -205,17 +204,17 @@
                     <label>Độ ưu tiên</label>
                     <select id="addTaskPriority">
                         <option value="">Chọn độ ưu tiên</option>
-                        <option value="low">Thấp</option>
-                        <option value="medium">Trung bình</option>
-                        <option value="high">Cao</option>
+                        <option value="Thấp">Thấp</option>
+                        <option value="Trung bình">Trung bình</option>
+                        <option value="Cao">Cao</option>
                     </select>
 
                     <label>Tiến độ</label>
                     <select id="addTaskProgress">
                         <option value="">Chọn tiến độ</option>
-                        <option value="on_track">Đúng tiến độ</option>
-                        <option value="at_risk">Có rủi ro</option>
-                        <option value="delayed">Trễ hạn</option>
+                        <option value="Đúng tiến độ">Đúng tiến độ</option>
+                        <option value="Có rủi ro">Có rủi ro</option>
+                        <option value="Trễ hạn">Trễ hạn</option>
                     </select>
                 </div>
 
