@@ -31,10 +31,7 @@ function showModal(type) {
 }
 
 function cancelModal() {
-
-    document.querySelectorAll(".modal").forEach(modal => {
-        modal.style.display = "none";
-    });
+    document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
 
     clearForm();
 }
@@ -156,10 +153,11 @@ function addProject() {
     let name = document.getElementById("addProjectName").value;
     let desc = document.getElementById("addProjectDesc").value;
 
-    if (!validateProject(name, desc)) return;
+    if (!validateAddProject(name, desc)) {
+        return;
+    }
 
     let newProject = {
-
         id: Math.floor(Math.random() * 1000) + new Date().getMilliseconds(),
         projectName: name,
         projectDesc: desc,
@@ -169,7 +167,6 @@ function addProject() {
                 role: "Project owner"
             }
         ]
-
     };
 
     projects.push(newProject);
@@ -238,7 +235,7 @@ function showError(selector, message, display, inputSelector) {
 
 // VALIDATE ADD
 
-function validateProject(name, desc) {
+function validateAddProject(name, desc) {
 
     let valid = true;
 
@@ -259,6 +256,7 @@ function validateProject(name, desc) {
         if (duplicate) {
             showError(".add .error-projectName", "Tên dự án đã tồn tại", "block", "#addProjectName");
             valid = false;
+            
         } else {
             showError(".add .error-projectName", "", "none", "#addProjectName");
         }
@@ -355,8 +353,6 @@ function searchProject() {
     let input = document.querySelector(".top-bar input");
 
     searchKeyword = input.value.trim().toLowerCase();
-
-    currentPage = 1;
 
     renderProjects();
 }

@@ -42,21 +42,6 @@
                     </div>
 
                     <div class="members">
-                        <div class="member">
-                            <div class="avatar avatar-blue">AN</div>
-                            <div>
-                                <b>An Nguyễn</b>
-                                <p>Project owner</p>
-                            </div>
-                        </div>
-
-                        <div class="member">
-                            <div class="avatar avatar-purple">BA</div>
-                            <div>
-                                <b>Bách Nguyễn</b>
-                                <p>Frontend developer</p>
-                            </div>
-                        </div>
 
                         <button class="btn avatar more" onclick="showModal('more-members')"><i
                                 class="fa-solid fa-ellipsis"></i></button>
@@ -92,73 +77,6 @@
 
                     <tbody>
 
-                        <!-- <tr class="project">
-                            <td colspan="7"><span>▶</span> To do</td>
-                        </tr> -->
-
-                        <!-- <tr>
-                            <td>Soạn thảo đề cương dự án</td>
-                            <td>An Nguyễn</td>
-                            <td><span class="tag blue">Thấp</span></td>
-                            <td>02-24</td>
-                            <td>02-27</td>
-                            <td><span class="status green">Đúng tiến độ</span></td>
-                            <td>
-                                <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
-                                <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
-                            </td>
-                        </tr> -->
-
-                        <!-- <tr>
-                            <td>Soạn thảo đề cương dự án</td>
-                            <td>An Nguyễn</td>
-                            <td><span class="tag orange">Trung bình</span></td>
-                            <td>02-24</td>
-                            <td>02-27</td>
-                            <td><span class="status orange">Có rủi ro</span></td>
-                            <td>
-                                <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
-                                <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
-                            </td>
-                        </tr> -->
-
-                        <!-- <tr>
-                            <td>Soạn thảo đề cương dự án</td>
-                            <td>An Nguyễn</td>
-                            <td><span class="tag red">Cao</span></td>
-                            <td>02-24</td>
-                            <td>02-27</td>
-                            <td><span class="status red">Trễ hạn</span></td>
-                            <td>
-                                <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
-                                <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
-                            </td>
-                        </tr> -->
-
-                        <!-- <tr class="project">
-                            <td colspan="7"><span>▶</span> In Progress</td>
-                        </tr> -->
-
-                        <!-- <tr>
-                            <td>Lên lịch họp kickoff</td>
-                            <td>An Nguyễn</td>
-                            <td><span class="tag orange">Trung bình</span></td>
-                            <td>02-24</td>
-                            <td>02-27</td>
-                            <td><span class="status orange">Có rủi ro</span></td>
-                            <td>
-                                <button class="btn btn-edit" onclick="showModal('edit-task')">Sửa</button>
-                                <button class="btn btn-delete" onclick="showModal('delete-task')">Xóa</button>
-                            </td>
-                        </tr> -->
-
-                        <!-- <tr class="project">
-                            <td colspan="7"><span>▶</span> Pending</td>
-                        </tr> -->
-
-                        <!-- <tr class="project">
-                            <td colspan="7"><span>▶</span> Done</td>
-                        </tr> -->
 
                     </tbody>
                 </table>
@@ -182,7 +100,12 @@
                     <select id="addTaskAssignee">
                         <option value="">Chọn người phụ trách</option>
                         <option value="1">An Nguyễn</option>
+                        <option value="2">Minh Trần</option>
+                        <option value="3">Lan Phạm</option>
+                        <option value="4">Hoàng Lê</option>
+                        <option value="5">Xuân Bách</option>
                     </select>
+                    <p class="error error-assignee"></p>
 
                     <label>Trạng thái</label>
                     <select id="addTaskStatus">
@@ -192,6 +115,7 @@
                         <option value="Pending">Pending</option>
                         <option value="Done">Done</option>
                     </select>
+                    <p class="error error-status"></p>
 
                     <label>Ngày bắt đầu</label>
                     <input type="date" id="addTaskStartDate">
@@ -208,6 +132,7 @@
                         <option value="Trung bình">Trung bình</option>
                         <option value="Cao">Cao</option>
                     </select>
+                    <p class="error error-priority"></p>
 
                     <label>Tiến độ</label>
                     <select id="addTaskProgress">
@@ -216,6 +141,7 @@
                         <option value="Có rủi ro">Có rủi ro</option>
                         <option value="Trễ hạn">Trễ hạn</option>
                     </select>
+                    <p class="error error-progress"></p>
                 </div>
 
                 <div class="modal-footer">
@@ -240,47 +166,72 @@
                     <label>Người phụ trách</label>
                     <select id="editTaskAssignee">
                         <option value="">Chọn người phụ trách</option>
-                        <option value="1">Nguyễn Văn A</option>
-                        <option value="2">Trần Văn B</option>
-                        <option value="3">Lê Văn C</option>
+                        <option value="1">An Nguyễn</option>
+                        <option value="2">Minh Trần</option>
+                        <option value="3">Lan Phạm</option>
+                        <option value="4">Hoàng Lê</option>
+                        <option value="5">Xuân Bách</option>
                     </select>
+                    <p class="error error-assignee"></p>
 
                     <label>Trạng thái</label>
                     <select id="editTaskStatus">
                         <option value="">Chọn trạng thái</option>
-                        <option value="not_started">Chưa bắt đầu</option>
-                        <option value="in_progress">Đang thực hiện</option>
-                        <option value="completed">Hoàn thành</option>
+                        <option value="To Do">To Do</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
                     </select>
+                    <p class="error error-status"></p>
 
                     <label>Ngày bắt đầu</label>
-                    <input type="date" id="editStartDate">
+                    <input type="date" id="editTaskStartDate">
                     <p class="error error-start"></p>
 
                     <label>Hạn cuối</label>
-                    <input type="date" id="editEndDate">
+                    <input type="date" id="editTaskDueDate">
                     <p class="error error-end"></p>
 
                     <label>Độ ưu tiên</label>
                     <select id="editTaskPriority">
                         <option value="">Chọn độ ưu tiên</option>
-                        <option value="low">Thấp</option>
-                        <option value="medium">Trung bình</option>
-                        <option value="high">Cao</option>
+                        <option value="Thấp">Thấp</option>
+                        <option value="Trung bình">Trung bình</option>
+                        <option value="Cao">Cao</option>
                     </select>
+                    <p class="error error-priority"></p>
 
                     <label>Tiến độ</label>
                     <select id="editTaskProgress">
                         <option value="">Chọn tiến độ</option>
-                        <option value="on_track">Đúng tiến độ</option>
-                        <option value="at_risk">Có rủi ro</option>
-                        <option value="delayed">Trễ hạn</option>
+                        <option value="Đúng tiến độ">Đúng tiến độ</option>
+                        <option value="Có rủi ro">Có rủi ro</option>
+                        <option value="Trễ hạn">Trễ hạn</option>
                     </select>
+                    <p class="error error-progress"></p>
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
                     <button class="btn btn-primary" onclick="editTask()">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal delete-task">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Xóa nhiệm vụ</h3>
+                    <span class="close" onclick="cancelModal()">&times;</span>
+                </div>
+
+                <div class="modal-body">
+                    <p>Bạn có chắc chắn muốn xóa nhiệm vụ này?</p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
+                    <button class="btn btn-delete" onclick="deleteTask()">Xóa</button>
                 </div>
             </div>
         </div>
@@ -324,54 +275,6 @@
 
                     <table class="member-table">
 
-                        <tr>
-                            <td class="member-info">
-                                <div class="avatar avatar-blue">AN</div>
-                                <div>
-                                    <p class="member-name">An Nguyễn</p>
-                                    <p class="member-email">nguyenquangan@gmail.com</p>
-                                </div>
-                            </td>
-
-                            <td class="member-role">
-                                <input type="text" value="Frontend developer">
-                                <span class="delete"><i class="fa-solid fa-trash-can"
-                                        style="color: rgb(220, 53, 69);"></i></span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="member-info">
-                                <div class="avatar avatar-dark-purple">BA</div>
-                                <div>
-                                    <p class="member-name">Bách Nguyễn</p>
-                                    <p class="member-email">bachnx@gmail.com</p>
-                                </div>
-                            </td>
-
-                            <td class="member-role">
-                                <input type="text" value="Frontend developer">
-                                <span class="delete"><i class="fa-solid fa-trash-can"
-                                        style="color: rgb(220, 53, 69);"></i></span>
-                            </td>
-
-                        </tr>
-
-                        <tr>
-                            <td class="member-info">
-                                <div class="avatar avatar-orange">DU</div>
-                                <div>
-                                    <p class="member-name">Dương Nguyễn</p>
-                                    <p class="member-email">duongnhm@gmail.com</p>
-                                </div>
-                            </td>
-
-                            <td class="member-role">
-                                <input type="text" value="Frontend developer">
-                                <span class="delete"><i class="fa-solid fa-trash-can"
-                                        style="color: rgb(220, 53, 69);"></i></span>
-                            </td>
-                        </tr>
 
                     </table>
 
@@ -379,25 +282,25 @@
 
                 <div class="modal-footer">
                     <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
-                    <button class="btn btn-primary">Lưu</button>
+                    <button class="btn btn-primary" onclick="saveMembers()">Lưu</button>
                 </div>
             </div>
         </div>
 
-        <div class="modal delete-task">
+        <div class="modal delete-member">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 id="modalTitle">Xóa nhiệm vụ</h3>
+                    <h3 id="modalTitle">Xóa thành viên</h3>
                     <span class="close" onclick="cancelModal()">&times;</span>
                 </div>
 
                 <div class="modal-body">
-                    <p>Bạn có chắc chắn muốn xóa nhiệm vụ này?</p>
+                    <p>Bạn có chắc chắn muốn xóa thành viên này?</p>
                 </div>
 
                 <div class="modal-footer">
                     <button class="btn btn-cancel" onclick="cancelModal()">Hủy</button>
-                    <button class="btn btn-delete">Xóa</button>
+                    <button class="btn btn-delete" onclick="deleteMember()">Xóa</button>
                 </div>
             </div>
         </div>
@@ -429,6 +332,8 @@
     </footer>
 
     <script src="../js/project-details.js"></script>
+    <!-- <script src="../js/data.js"></script> -->
+
 </body>
 
 </html>
