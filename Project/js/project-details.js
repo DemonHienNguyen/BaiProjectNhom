@@ -69,6 +69,9 @@ function clearForm() {
     document.getElementById("addTaskPriority").value = "";
     document.getElementById("addTaskProgress").value = "";
 
+    document.getElementById("memberEmail").value = "";
+    document.getElementById("memberRole").value = "";
+
 
     document.querySelectorAll(".error").forEach(e => {
         e.style.display = "none";
@@ -135,8 +138,8 @@ function renderTodoTasks(tbody, projectTasks) {
             <td>${task.taskName}</td>
             <td>${getUserNameById(task.assigneeId)}</td>
             <td><span class="tag ${getPriorityClass(task.priority)}">${task.priority}</span></td>
-            <td>${task.asignDate}</td>
-            <td>${task.dueDate}</td>
+            <td>${formatDate(task.asignDate)}</td>
+            <td>${formatDate(task.dueDate)}</td>
             <td><span class="tag ${getProgressClass(task.progress)}">${task.progress}</span></td>
             <td>
                 <button class="btn btn-edit" onclick="openEditTask(${task.id})">Sửa</button>
@@ -166,8 +169,8 @@ function renderInProgressTasks(tbody, projectTasks) {
             <td>${task.taskName}</td>
             <td>${getUserNameById(task.assigneeId)}</td>
             <td><span class="tag ${getPriorityClass(task.priority)}">${task.priority}</span></td>
-            <td>${task.asignDate}</td>
-            <td>${task.dueDate}</td>
+            <td>${formatDate(task.asignDate)}</td>
+            <td>${formatDate(task.dueDate)}</td>
             <td><span class="tag ${getProgressClass(task.progress)}">${task.progress}</span></td>
             <td>
                 <button class="btn btn-edit" onclick="openEditTask(${task.id})">Sửa</button>
@@ -197,10 +200,10 @@ function renderPendingTasks(tbody, projectTasks) {
            <td>${task.taskName}</td>
             <td>${getUserNameById(task.assigneeId)}</td>
             <td><span class="tag ${getPriorityClass(task.priority)}">${task.priority}</span></td>
-            <td>${task.asignDate}</td>
-            <td>${task.dueDate}</td>
+            <td>${formatDate(task.asignDate)}</td>
+            <td>${formatDate(task.dueDate)}</td>
             <td><span class="tag ${getProgressClass(task.progress)}">${task.progress}</span></td>
-            <td>
+            <td>    
                 <button class="btn btn-edit" onclick="openEditTask(${task.id})">Sửa</button>
                 <button class="btn btn-delete" onclick="openDeleteTask(${task.id})">Xóa</button>
             </td>
@@ -228,8 +231,8 @@ function renderDoneTasks(tbody, projectTasks) {
             <td>${task.taskName}</td>
             <td>${getUserNameById(task.assigneeId)}</td>
             <td><span class="tag ${getPriorityClass(task.priority)}">${task.priority}</span></td>
-            <td>${task.asignDate}</td>
-            <td>${task.dueDate}</td>
+            <td>${formatDate(task.asignDate)}</td>
+            <td>${formatDate(task.dueDate)}</td>
             <td><span class="tag ${getProgressClass(task.progress)}">${task.progress}</span></td>
             <td>
                 <button class="btn btn-edit" onclick="openEditTask(${task.id})">Sửa</button>
@@ -245,6 +248,11 @@ function renderDoneTasks(tbody, projectTasks) {
 function getUserNameById(id) {
     let user = users.find(u => u.id === id);
     return user ? user.fullName : "Không xác định";
+}
+
+function formatDate(date) {
+    let [year, month, day] = date.split("-");
+    return `${day} - ${month}`;
 }
 
 function getPriorityClass(priority) {
@@ -609,7 +617,7 @@ function renderMembers() {
     });
 
     members.innerHTML += `
-        <button class="btn avatar more" onclick="showModal('more-members')">
+        <button class="btn avatar more" onclick="openMoreMembers()">
             <i class="fa-solid fa-ellipsis"></i>
         </button>
     `;
@@ -623,7 +631,7 @@ function renderMoreMembers() {
 
     members.innerHTML = "";
 
-    let memberIds = project.members || [];
+    let memberIds = tempMembers || [];
 
     memberIds.forEach(member => {
 
@@ -642,7 +650,7 @@ function renderMoreMembers() {
             </td>
 
             <td class="member-role">
-                <select>
+                <select onchange="changeRole(${member.userId}, this.value)">
                     <option ${member.role === "Project owner" ? "selected" : ""}>Project owner</option>
                     <option ${member.role === "Frontend developer" ? "selected" : ""}>Frontend developer</option>
                     <option ${member.role === "Backend developer" ? "selected" : ""}>Backend developer</option>
@@ -656,6 +664,91 @@ function renderMoreMembers() {
         </tr>
         `;
     });
+}
+
+
+// CHANGE ROLE
+
+let tempMembers = [];
+
+function openMoreMembers() {
+    tempMembers = JSON.parse(JSON.stringify(project.members));
+    renderMoreMembers();
+    showModal("more-members");
+}
+
+function changeRole(userId, role) {
+
+    let member = tempMembers.find(m => m.userId === userId);
+
+    if (member) {
+        member.role = role;
+    }
+}
+
+function saveMembers() {
+
+    project.members = tempMembers;
+
+    localStorage.setItem("projects", JSON.stringify(projects));
+
+    renderMembers();
+    renderMoreMembers();
+
+    cancelModal();
+}
+
+// ADD MEMBER
+
+function addMember() {
+
+    let email = document.getElementById("memberEmail").value.trim();
+    let role = document.getElementById("memberRole").value.trim();
+
+    let valid = true;
+
+    let user = users.find(u => u.email === email);
+
+    if (email === "") {
+        showError(".error-email", "Email không được để trống", "block", "#memberEmail");
+        valid = false;
+
+    } else if (!user) {
+        showError(".error-email", "Email chưa được đăng ký", "block", "#memberEmail");
+        valid = false;
+
+    } else if (project.members.find(m => m.userId === user.id)) {
+        showError(".error-email", "Thành viên đã tồn tại", "block", "#memberEmail");
+        valid = false;
+
+    } else {
+        showError(".error-email", "", "none", "#memberEmail");
+    }
+
+    if (role === "") {
+        showError(".error-role", "Vai trò không được để trống", "block", "#memberRole");
+        valid = false;
+
+    } else {
+        showError(".error-role", "", "none", "#memberRole");
+    }
+
+    if (!valid) return;
+
+    project.members.push({
+        userId: user.id,
+        role: role
+    });
+
+    localStorage.setItem("projects", JSON.stringify(projects));
+
+    renderMembers();
+    renderMoreMembers();
+
+    clearForm();
+    cancelModal();
+
+    showToast("Thêm thành viên thành công");
 }
 
 
@@ -675,20 +768,7 @@ function deleteMember() {
     renderMembers();
     renderMoreMembers();
 
-    cancelModal();
-}
-
-// CHANGE ROLE
-
-function changeRole(userId, role) {
-
-    let member = project.members.find(m => m.userId === userId);
-
-    if (member) {
-        member.role = role;
-    }
-
-    localStorage.setItem("projects", JSON.stringify(projects));
+    document.querySelector(".delete-member").style.display = "none";
 }
 
 

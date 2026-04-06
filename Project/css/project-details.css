@@ -398,6 +398,7 @@ body {
     border: 1px solid #DEE2E6;
     border-radius: 8px;
     font-size: 16px;
+    appearance: none;
 }
 
 .member-title {

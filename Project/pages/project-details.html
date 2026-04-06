@@ -245,11 +245,19 @@
 
                 <div class="modal-body">
                     <label>Email</label>
-                    <input type="email">
-                    <p class="error error-member">Thành viên đã tồn tại</p>
+                    <input type="email" id="memberEmail">
+                    <p class="error error-email"></p>
 
                     <label>Vai trò</label>
-                    <input type="text">
+                    <select id="memberRole">
+                        <option value=""></option>
+                        <option value="Project owner">Project owner</option>
+                        <option value="Frontend developer">Frontend developer</option>
+                        <option value="Backend developer">Backend developer</option>
+                        <option value="Tester">Tester</option>
+                        <option value="Designer">Designer</option>
+                    </select>
+                    <p class="error error-role"></p>
                 </div>
 
                 <div class="modal-footer">
