@@ -52,7 +52,7 @@ function showToast(message) {
 
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 1000);
+    }, 1500);
 
 }
 
@@ -590,6 +590,8 @@ function deleteTask() {
 // SEARCH TASK
 
 
+
+
 // RENDER MEMBERS
 
 function renderMembers() {
@@ -700,6 +702,11 @@ function saveMembers() {
 
 // ADD MEMBER
 
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
 function addMember() {
 
     let email = document.getElementById("memberEmail").value.trim();
@@ -711,6 +718,9 @@ function addMember() {
 
     if (email === "") {
         showError(".error-email", "Email không được để trống", "block", "#memberEmail");
+        valid = false; 
+    } else if (!validateEmail(email)) {
+        showError(".error-email", "Email không đúng định dạng", "block", "#memberEmail");
         valid = false;
 
     } else if (!user) {
